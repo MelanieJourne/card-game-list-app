@@ -5,9 +5,6 @@ class MainAddGameView extends Component {
   render() {
     return (
       <View>
-        <Text>
-          ad me ad me ad me ad me.
-        </Text>
       </View>
     );
   }

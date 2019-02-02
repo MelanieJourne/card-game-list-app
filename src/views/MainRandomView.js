@@ -5,9 +5,6 @@ class MainRandomView extends Component {
   render() {
     return (
       <View>
-        <Text>
-          Random is power. Power is random.
-        </Text>
       </View>
     );
   }
