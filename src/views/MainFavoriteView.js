@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Text, View, TouchableOpacity} from 'react-native';
+import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import { Navigation } from "react-native-navigation";
+import LinearGradient from 'react-native-linear-gradient';
 
 class MainFavoriteView extends Component {
   render() {
@@ -9,9 +10,12 @@ class MainFavoriteView extends Component {
         <Text>
           Wow favorite piece of cake.
         </Text>
-        <TouchableOpacity onPress={() => this.goToAddGameTab()}>
-          <Text> Press Me </Text>
-        </TouchableOpacity>
+
+        <LinearGradient colors={['#592941', '#383961']} style={styles.linearGradient}>
+          <TouchableOpacity onPress={() => this.goToAddGameTab()}>
+            <Text> Press Me </Text>
+          </TouchableOpacity>
+        </LinearGradient>
       </View>
     );
   }
@@ -27,3 +31,13 @@ class MainFavoriteView extends Component {
 }
 
 export default MainFavoriteView;
+
+var styles = StyleSheet.create({
+  linearGradient: {
+    height: 100,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5,
+    width: 100,
+  },
+});
