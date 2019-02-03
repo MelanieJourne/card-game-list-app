@@ -9,25 +9,31 @@ class HeaderView extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <LinearGradient elevation={2} colors={[palet_green_primary, palet_green_secondary]} style={styles.header_background}>
+        <LinearGradient elevation={4} colors={[palet_green_primary, palet_green_secondary]} style={styles.header_background}>
         </LinearGradient>
-        <View style={styles.tab_container} elevation={5}>
-          <TouchableOpacity style={styles.tab_button} onPress={()=>this.props.onTabPress(0)}>
-            <Text style={this.getTextStyles(0)}> ALL </Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.tab_button} onPress={()=>this.props.onTabPress(1)}>
-            <Text style={this.getTextStyles(1)}> COOP </Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.tab_button} onPress={()=>this.props.onTabPress(2)}>
-            <Text style={this.getTextStyles(2)}> BATTLE </Text>
-          </TouchableOpacity>
+        <View elevation={6} style={styles.container_title}>
+          <Text style={styles.text_title}>{this.props.title.toUpperCase()}</Text>
+        </View>
+        <View style={styles.tab_container} elevation={10}>
+          {this.renderTabs()}
         </View>
       </View>
     );
   }
 
-  getTextStyles = (index) => {
-    if(index === this.props.selected_index) {
+  renderTabs() {
+    const list = this.props.tabs.map(cat =>
+      (
+        <TouchableOpacity key={cat} style={styles.tab_button} onPress={()=>this.props.onTabPress(cat)}>
+          <Text style={this.getTextStyles(cat)}> {cat} </Text>
+        </TouchableOpacity>
+      ));
+    return list;
+
+  }
+
+  getTextStyles = (name) => {
+    if(name === this.props.selected_index) {
       return styles.text_selected;
     }
     return styles.text_unselected;
@@ -48,7 +54,9 @@ var styles = StyleSheet.create({
     borderBottomRightRadius: 80,
   },
   tab_container: {
-    width:'80%',
+    position: 'absolute',
+    top:105,
+    width:'70%',
     height:30,
     backgroundColor:'white',
     borderRadius:15,
@@ -69,4 +77,15 @@ var styles = StyleSheet.create({
     color:inactive_tab_color,
     textAlign:'center',
   },
+  container_title: {
+    position: 'absolute',
+    top:25,
+    width:'70%',
+    height:50,
+  },
+  text_title: {
+    color:'white',
+    textAlign:'center',
+    fontSize:40,
+  }
 });

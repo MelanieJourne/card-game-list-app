@@ -7,7 +7,7 @@ class MainListView extends Component {
 
   constructor(props) {
       super(props);
-      this.state = { selected_index: 0 };
+      this.state = { selected_index: 'All' };
   }
 
   onTabPress = (index) => {
@@ -17,7 +17,7 @@ class MainListView extends Component {
   render() {
     return (
       <View>
-        <HeaderView selected_index={this.state.selected_index} onTabPress={(index)=>this.onTabPress(index)}/>
+        <HeaderView selected_index={this.state.selected_index} onTabPress={(index)=>this.onTabPress(index)} tabs={['All', 'Coop', 'Battle']} title={"List"}/>
       </View>
     );
   }
