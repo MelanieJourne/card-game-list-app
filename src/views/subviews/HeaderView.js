@@ -11,9 +11,6 @@ class HeaderView extends Component {
       <View style={styles.container}>
         <LinearGradient elevation={4} colors={[palet_green_primary, palet_green_secondary]} style={styles.header_background}>
         </LinearGradient>
-        <View elevation={6} style={styles.container_title}>
-          <Text style={styles.text_title}>{this.props.title.toUpperCase()}</Text>
-        </View>
         <View style={styles.tab_container} elevation={10}>
           {this.renderTabs()}
         </View>
@@ -48,14 +45,14 @@ var styles = StyleSheet.create({
     alignItems:'center',
   },
   header_background: {
-    height: 120,
+    height: 80,
     width: '100%',
-    borderBottomLeftRadius: 80,
-    borderBottomRightRadius: 80,
+    //borderBottomLeftRadius:20,
+    //borderBottomRightRadius:40,
   },
   tab_container: {
     position: 'absolute',
-    top:105,
+    top:25,
     width:'70%',
     height:30,
     backgroundColor:'white',
