@@ -1,6 +1,9 @@
-import React, {Component} from 'react';
+// Modules import
+import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-
+// Values & functions import
+import { games_list } from '../values/games';
+// View import
 import HeaderView from './subviews/HeaderView';
 
 class MainListView extends Component {

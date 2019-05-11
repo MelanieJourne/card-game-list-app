@@ -1,7 +1,7 @@
 // Module import
 import { Navigation } from "react-native-navigation";
 // Static import
-import { NAV_MAIN_LIST_VIEW, NAV_MAIN_RANDOM_VIEW, NAV_MAIN_FAVORITE_VIEW, NAV_MAIN_ADD_GAME_VIEW } from './src/value';
+import { NAV_MAIN_LIST_VIEW, NAV_MAIN_RANDOM_VIEW, NAV_MAIN_FAVORITE_VIEW, NAV_MAIN_ADD_GAME_VIEW } from './src/values/value';
 import { inactive_tab_color, selected_tab_color } from './src/managers/LayoutManager';
 import { wording } from './src/managers/TranslateManager';
 // Views import
